@@ -4,8 +4,9 @@ body {
 
 
 .container {
-    margin-top: 16pt;
+    margin-top: 10pt;
 }
+
 .main_bg {
     background: #fff;
     margin-bottom: 10px;
@@ -59,4 +60,13 @@ body {
 
 .numbers-summary li {
     display: table-cell;
+}
+
+.body_footer {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    clear: both;
+    line-height: 22px;
+    font-size: 80%;
 }

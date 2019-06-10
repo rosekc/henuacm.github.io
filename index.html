@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Vj Rating</title>
+    <title>HENUACM</title>
     
     <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/css/style.css" , rel="stylesheet" />
@@ -19,7 +19,7 @@
 <body>
     
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/">Vj Rating</a>
+        <a class="navbar-brand" href="/">HENUACM</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -45,12 +45,20 @@
         
         
 <div class="jumbotron main_bg">
-    <h1>Vjudge Rating</h1>
-    <p>...</p>
+    <h1>Henuacm</h1>
+    <p>On development.</p>
     <p><a class="btn btn-primary btn-lg" href="/rank_list/" role="button">Check it out!</a></p>
   </div>
 
     </main>
+    
+    
+    
+    <footer class="body_footer">
+            
+            All Copyright Reserved © 2008-2019 HENU ACM team
+            
+    </footer>
     
 
     
@@ -61,11 +69,16 @@
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
     <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js"></script>
+    <script src="//cdn.bootcss.com/moment.js/2.18.1/moment-with-locales.min.js"></script>
 <script>
 moment.locale("en");
 function flask_moment_render(elem) {
-    $(elem).text(eval('moment("' + $(elem).data('timestamp') + '").' + $(elem).data('format') + ';'));
+    if ($(elem).data('is-duration') === undefined){
+        $(elem).text(eval('moment("' + $(elem).data('timestamp') + '").' + $(elem).data('format') + ';'));
+    }else{
+        cmd = `moment.duration(moment('${$(elem).data('timestamp')}').diff('${$(elem).data('from')}')).${$(elem).data('format')};`
+        $(elem).text(eval(cmd));
+    }
     $(elem).removeClass('flask-moment').show();
 }
 function flask_moment_render_all() {
@@ -80,6 +93,7 @@ $(document).ready(function() {
     flask_moment_render_all();
 });
 </script>
+    <script src="/static/js/moment_duration_formatter.js"></script>
     
 </body>
 
