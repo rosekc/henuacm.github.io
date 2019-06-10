@@ -150,7 +150,7 @@ $(document).ready(function() {
 <!-- 引入 echarts.js -->
 <script src="https://cdn.bootcss.com/echarts/4.2.1-rc1/echarts.min.js"></script>
 <script>
-    var data = JSON.parse('[{"name": "Henu acm round #10", "time": "2017-12-02", "rating": 1581}]');
+    var data = JSON.parse('[{"name": "Henu acm round #10", "time": "2017-12-02T11:00:00Z", "rating": 1581}]');
     var maxRating = Math.max.apply(null, data.map((x) => x.rating));
     var minRating = Math.min.apply(null, data.map((x) => x.rating));
     option = {
